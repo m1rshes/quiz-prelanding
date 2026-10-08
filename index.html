@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Стартовый план в криптовалюте — пройдите квиз</title>
+  <meta name="description" content="Короткий квиз из 4 шагов и персональное предложение для старта в криптовалюте.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <noscript>
+    <p class="noscript">Для прохождения квиза включите JavaScript в настройках браузера и обновите страницу.</p>
+  </noscript>
+
+  <div class="app">
+    <h1 class="visually-hidden">Квиз: стартовый план в криптовалюте</h1>
+
+    <header class="topbar">
+      <button class="back" id="backBtn" type="button" hidden>← Назад</button>
+      <div class="progress" role="progressbar" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-label="Прогресс квиза">
+        <div class="progress__track">
+          <div class="progress__fill" id="progressFill"></div>
+        </div>
+        <span class="progress__label" id="progressLabel">1 из 4</span>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="screen" data-step="1" aria-labelledby="q1">
+        <h2 class="title" id="q1" tabindex="-1">Твой пол?</h2>
+        <div class="cards">
+          <button class="card" type="button" data-field="gender" data-value="male" aria-pressed="false">
+            <img src="assets/male.svg" alt="" width="160" height="160">
+            <span>Мужчина</span>
+          </button>
+          <button class="card" type="button" data-field="gender" data-value="female" aria-pressed="false">
+            <img src="assets/female.svg" alt="" width="160" height="160">
+            <span>Женщина</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" data-step="2" aria-labelledby="q2" hidden>
+        <h2 class="title" id="q2" tabindex="-1">Твой возраст?</h2>
+        <div class="list">
+          <button class="option" type="button" data-field="age" data-value="18-25" aria-pressed="false">18–25</button>
+          <button class="option" type="button" data-field="age" data-value="26-35" aria-pressed="false">26–35</button>
+          <button class="option" type="button" data-field="age" data-value="36-45" aria-pressed="false">36–45</button>
+          <button class="option" type="button" data-field="age" data-value="45+" aria-pressed="false">45+</button>
+        </div>
+      </section>
+
+      <!-- Шаг 3: цель -->
+      <section class="screen" data-step="3" aria-labelledby="q3" hidden>
+        <h2 class="title" id="q3" tabindex="-1">Твоя основная цель?</h2>
+        <div class="list">
+          <button class="option" type="button" data-field="goal" data-value="passive" aria-pressed="false">Пассивный доход</button>
+          <button class="option" type="button" data-field="goal" data-value="growth" aria-pressed="false">Быстрый рост капитала</button>
+          <button class="option" type="button" data-field="goal" data-value="learn" aria-pressed="false">Изучить с нуля</button>
+        </div>
+      </section>
+
+      <section class="screen" data-step="4" aria-labelledby="q4" aria-live="polite" hidden>
+        <div class="loader">
+          <img class="loader__coin" src="assets/coin.svg" alt="" width="120" height="120">
+          <h2 class="title" id="q4" tabindex="-1">Подбираем для тебя результат…</h2>
+          <div class="loader__bar" aria-hidden="true">
+            <div class="loader__fill" id="loaderFill"></div>
+          </div>
+          <p class="loader__pct" id="loaderPct">0%</p>
+        </div>
+      </section>
+
+      <section class="screen" data-step="5" aria-labelledby="q5" hidden>
+        <div class="final">
+          <img class="final__img" src="assets/chart.svg" alt="" width="240" height="160">
+          <h2 class="title" id="q5" tabindex="-1">Готово! Твоё персональное предложение</h2>
+          <p class="final__text">Мы подобрали стартовый план для цели: <strong id="goalText"></strong>. Нажми кнопку, чтобы получить результат.</p>
+          <a class="btn" id="cta" href="#" rel="noopener">Получить результат</a>
+          <p class="disclaimer">Криптовалюты — высокорисковый актив. Материалы носят ознакомительный характер и не являются инвестиционной рекомендацией.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
